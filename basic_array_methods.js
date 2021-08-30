@@ -20,3 +20,9 @@ secretMessage.splice(6,5, 'know,');
 
 // On one line, use console.log() and .join() to print the secret message as a sentence.
 console.log(secretMessage.join(' '));
+
+// ! Copy or Clone or Duplicate array
+let students = ['Alice', 'Jane', 'Tim'];
+let studentsCopy = [...students];
+
+let studentsClone = Array.from(students);
