@@ -1,0 +1,19 @@
+[
+  {
+    'groupName': 'Flex Track',
+    'location': 'Melbourne',
+    'startYear': 2021,
+    'finishYear': 2022,
+    'educators':
+    [
+      {
+        'educatorName': 'Alex B',
+        'location': 'Melbourne', 
+      },
+      {
+        'educatorName': 'Ashleigh',
+        'location': 'Brisbane', 
+      },
+    ]
+  }
+]
