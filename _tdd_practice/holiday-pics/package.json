@@ -1,0 +1,14 @@
+{
+  "name": "holiday-pics",
+  "version": "1.0.0",
+  "description": "jest-tdd testing lesson and practice",
+  "main": "./source/index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "a-sh-dev",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.1.0"
+  }
+}
