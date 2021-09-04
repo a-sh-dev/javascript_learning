@@ -1,0 +1,16 @@
+{
+  "name": "largest_number",
+  "version": "1.0.0",
+  "description": "tdd practice with jest and npm javascript",
+  "main": "./source/index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node source/index.js",
+    "hello": "echo Hello! Ganbarou!"
+  },
+  "author": "a-sh-dev",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.1.0"
+  }
+}
