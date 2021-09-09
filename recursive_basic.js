@@ -37,3 +37,31 @@ if (num > 0) {
   let result = factorial(num);
   console.log(`The factorial of ${num} is ${result}`);
 }
+
+/* 
+  *  From Fireship.io: A recursive function is one that calls itself from inside its own function body. If a terminating condition is not provided it will create and infinite loop. Recursive functions are commonly used in algorithm implementations to efficiently handle tasks like binary-tree traversal. Below is an example of a recursive function that traverses the the file system using NodeJS.
+*/ 
+
+const fs = require('fs');
+const { join } = require('path');
+
+const traverse = (dir) => {
+
+  const subfolders = fs.statSync(dir).isDirectory()
+                     && fs.readdirSync(dir);
+                     
+  if (subfolders) {
+
+    console.log('👟👟👟 Traversing ', dir);
+
+    subfolders.forEach(path => {
+      const fullPath = join(dir, path);
+
+      traverse( fullPath );
+    });
+
+  }
+
+}
+
+traverse( process.cwd() );

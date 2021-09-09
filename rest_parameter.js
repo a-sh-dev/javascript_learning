@@ -43,3 +43,25 @@ function multiply(multiplier, ...nums) {
 console.log(multiply(2, 1, 3, 5));
 // => [ 2, 6, 10 ]
 // 2 is the 'multiplier' being the first argument, therefore 2 * 1, 2 * 3, 2 * 5
+
+// ! Positional params (limited params)
+function makeBreakfast(main, side, drink) {
+  console.log(arguments)
+  return `Breakfast is ${main}, ${side}, and ${drink}`;
+}
+
+// ! Named with destructured
+function makeLunch (opts) {
+  const { main, side, drink } = opts;
+  return `Lunch is ${main}, ${side}, ${drink}.`;
+}
+
+// ! Rest params
+function makeDinner (main, ...args) {
+  console.log(main, args)
+  return `Dinner includes ${main} and ${args.join('')}.`;
+}
+
+makeBreakfast('🥪', '🥑', '🥛');
+makeLunch({ main: '🥗', side: '🍟', drink: '🍵' });
+makeDinner('🍜', '🍕', '🥩', '🍙', '🍏', '🍷');
