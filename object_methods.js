@@ -62,6 +62,27 @@ const robotEntries = Object.entries(robot);
   [ 'energyLevel', 75 ] ]
 */ 
 
+// * Iterates over objects with for-of
+const obj = {
+  moon: '🌙',
+  trex: '🦖'
+} 
+
+// * Obtain keys
+for (k of Object.keys(obj)) {
+  console.log(k); //* -> moon, trex
+};
+
+// * Obtain values
+for (v of Object.values(obj)) {
+  console.log(v); //* -> 🌙, 🦖
+}
+
+// * Obtain both key and values with the for of iterator
+for (const [k, v] of Object.entries(obj)) {
+  console.log(k, v); //* -> moon 🌙, trex 🦖
+};
+
 // * Create a new object using the existing properties of robot, but with a few additional properties -> Object.assign(target, source)
 let target = { laserBlaster: true, voiceRecognition: true }
 
@@ -75,3 +96,27 @@ const newRobot = Object.assign(target, robot);
   armor: 'Steel-plated',
   energyLevel: 75 }
  */
+
+// * Spread syntax is also usable to copy object
+const clone = Object.assign({}, original);
+
+const sugar = { ...original };
+
+const sugar = { ...original, hola: 'mundo' };
+
+// ! Constructors – just like how Class is created -> describes how to create an Object other than literal such as const obj = {}
+// * Use Sentence-case
+function Boat(name) {
+  this.name = name;
+  this.created = Date.now()
+
+  this.horn = function () {
+    console.log(this.name);
+  }
+};
+
+// * The object is then instantiated with 'new' keyword
+const sunny = new Boat('Sunny');
+const thousands = new Boat('Thousands Sunny');
+
+sunny.horn() //* -> Sunny
