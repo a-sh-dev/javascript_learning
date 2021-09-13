@@ -15,6 +15,14 @@ const selectRandomElement = arr => {
   return arr[randomIndex];
 };
 
-function capitaliseName(str) {
-  const 
-}
+function capitalisedName(str) {
+  const capitalisedString = str.split(' ').map(word => word[0].toUpperCase() + word.substring(1)).join(' ');
+  return capitalisedString;
+};
+
+module.exports = {
+  createSanitisedArray,
+  removeEmptyArrayItems,
+  selectRandomElement,
+  capitalisedName
+};
