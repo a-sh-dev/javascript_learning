@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { createSanitisedArray, removeEmptyArrayItems } = require('./utils.js');
+const { createSanitisedArray, removeEmptyArrayItems, selectRandomElement, capitalisedName } = require('./utils.js');
 
 function getData(path) {
   return new Promise((resolve, reject) => {
@@ -14,7 +14,7 @@ getData('./celeb-classroom.txt')
   .then(createSanitisedArray)
   .then(removeEmptyArrayItems)
   .then(selectRandomElement)
-  .then(capitaliseName)
+  .then(capitalisedName)
   .then(data => console.log(data))
   .catch(error => console.log(error))
 

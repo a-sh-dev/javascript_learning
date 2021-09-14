@@ -10,10 +10,15 @@ const removeEmptyArrayItems = arr => {
   return filteredArray
 };
 
-const selectRandomElement = arr => {
+function selectRandomElement(arr) {
   const randomIndex = Math.floor(Math.random() * arr.length)
   return arr[randomIndex];
 };
+
+// const selectRandomElement = arr => {
+//   const randomIndex = Math.floor(Math.random() * arr.length)
+//   return arr[randomIndex];
+// };
 
 function capitalisedName(str) {
   const capitalisedString = str.split(' ').map(word => word[0].toUpperCase() + word.substring(1)).join(' ');
