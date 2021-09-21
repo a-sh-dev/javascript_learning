@@ -37,6 +37,11 @@ class Media {
   addRating(rating) {
     this.ratings.push(rating);
   }
+
+  // method that can be extended
+  print() {
+    return `Title: ${this.title}`
+  }
 }
 
 // Book - author (str), pages (num), title (str),isCheckedOut (bool = false), ratings (arr)
@@ -53,6 +58,11 @@ class Book extends Media {
 
   get pages() {
     return this._pages;
+  }
+
+  // ! Method extended from parent class
+  print() {
+    return `Book ${super.print()} by ${this.author}`
   }
 }
 
