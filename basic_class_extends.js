@@ -38,6 +38,11 @@ class Media {
     this.ratings.push(rating);
   }
 
+  // ! Method to obtain the class's name
+  confirmClass() {
+    return `"${this.title}" is a ${this.constructor.name}.`
+  }
+
   // method that can be extended
   print() {
     return `Title: ${this.title}`
@@ -101,6 +106,7 @@ historyOfEverything.addRating(4);
 historyOfEverything.addRating(5);
 historyOfEverything.addRating(5);
 console.log(historyOfEverything.getAverageRating());
+console.log(historyOfEverything.confirmClass());
 
 // Create Movie instance
 const speed = new Movie('Speed', 'Jan de Bont', 116);
@@ -110,5 +116,5 @@ speed.addRating(1);
 speed.addRating(1);
 speed.addRating(5);
 console.log(speed.getAverageRating());
-
+console.log(speed.confirmClass());
 
