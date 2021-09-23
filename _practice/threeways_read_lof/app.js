@@ -34,4 +34,4 @@ promisifiedReadfile('./file.txt', 'utf-8')
     console.log(firstSentence, secondSentence);
   };
 
-// readFiles();
+readFiles();
