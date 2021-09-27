@@ -1,0 +1,1 @@
+This is similar lesson as the XHR but based on ES6!
