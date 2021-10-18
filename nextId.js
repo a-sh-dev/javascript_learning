@@ -8,22 +8,44 @@ function nextId(data) {
       return a.id - b.id
   })
   let lastItem = sorted[dataLength - 1].id
+  // let lastItem = sorted.at(-1).id
   return lastItem + 1
 }
 
-let data = [
- {
-  id: 1,
-  label: "Rose"
- },
- {
-  id: 13,
-   label: "Tiger"
- },
- {
-  id: 10,
-  label: "Tree"
- }
-] 
+// function nextIdShort(data) {
+//   return (data.length === 0) ? 1 : data.sort((a, b) => {return a.id - b.id}).at(-1).id + 1
+// }
+
+
+function nextIdRed(data) {
+  if (!data) return 'No data found';
+
+  const highestId = data.reduce((highest, object) => {
+    if (object.id > highest) {
+      highest = object.id;
+    }
+    return highest;
+  }, 0);
+  return highestId + 1;
+}
+
+// let data = [
+//  {
+//   id: 1,
+//   label: "Rose"
+//  },
+//  {
+//   id: 13,
+//    label: "Tiger"
+//  },
+//  {
+//   id: 10,
+//   label: "Tree"
+//  }
+// ] 
+
+let data = []
 
 console.log(nextId(data))
+// console.log(nextIdShort(data))
+console.log(nextIdRed(data))
