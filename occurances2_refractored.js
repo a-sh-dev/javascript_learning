@@ -1,7 +1,11 @@
 // ! Create a new array of items
-const createArr = (length) => [...Array(length)];
-// * Another method:
+// * The first method adds the x to be filled into the array
+const createArr = (length, x) => Array(length).fill(x);
+
+// * The methods below only create the length of array
 const createArr1 = (length) => Array.from(new Array(length));
+// Another method:
+const createArr2 = (length) => [...Array(length)];
 
 // Randomise number
 const randomise = (n) => Math.ceil(Math.random() * n);
@@ -10,12 +14,14 @@ const randomise = (n) => Math.ceil(Math.random() * n);
 const createPack = (arr, n) => {
   let pack = [];
   for (let eachItem of arr) {
-    pack.push(createArr(randomise(n)).map((item) => eachItem));
+    // pack.push(createArr(randomise(n)).map((item) => eachItem));
+    pack.push(createArr(randomise(n), eachItem));
   }
   return pack.flat();
 };
 
 let randomFruitArr = ["apple", "mango", "durian", "pear", "orange", "banana"];
+// let randomFruitArr = ["🍎", "🍏", "🥭", "🍑", "🍌", "🍉", "🍋"];
 
 let fruits = createPack(randomFruitArr, 20);
 // console.log(fruits)
