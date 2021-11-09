@@ -13,20 +13,19 @@
 */
 
 const order = [
-  {name: "jar of coffee", qty:2, price: 15},
-  {name: "packet of teabags", qty: 3, price: 8}
-]
+  { name: "jar of coffee", qty: 2, price: 15 },
+  { name: "packet of teabags", qty: 3, price: 8 }
+];
 
-function orderTotal(order, options = {salesTax: 0.10, shipping: 15}) {
-  let {salesTax, shipping} = options;
+function orderTotal(order, options = { salesTax: 0.1, shipping: 15 }) {
+  let { salesTax, shipping } = options;
   const subtotal = order.reduce((initial, order) => {
-    return initial += (order.price * order.qty)
-  }, 0)
+    return (initial += order.price * order.qty);
+  }, 0);
 
   if (subtotal >= 200) {
     shipping = 0;
   }
 
-  return subtotal + (subtotal * salesTax) + shipping;
+  return subtotal + subtotal * salesTax + shipping;
 }
-

@@ -2,10 +2,34 @@
 // ? Implement a range function that returns an array of numbers from the start number to the end number (inclusive). Example: range(2,10)  // should return [2,3,4,5,6,7,8,9,10]
 
 const range = (start, end) => {
-  if (start === end) return [start];
   const length = end - start + 1;
   let arr = [...Array(length).keys()].map((x) => start + x);
   return arr;
+};
+
+const rangeZaid = (start, end) => {
+  let arr = [];
+  arr.push(start);
+
+  for (let i = 0; arr[i] < end; i++) {
+    start++;
+    arr.push(start);
+  }
+  return arr;
+};
+
+const rangeGrant = (start, end) => {
+  let arr = [];
+  let i = end - start + 1;
+
+  while (i--) {
+    arr[i] = end--;
+  }
+  return arr;
+};
+
+const rangeNam = (start, end, length = end - start + 1) => {
+  return Array.from({ length }, (_, index) => start + index);
 };
 
 console.log(range(1, 1));
