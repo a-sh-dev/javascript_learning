@@ -63,3 +63,23 @@ function primeNumberNick(number) {
 
 console.log(primeNumberNick(45));
 console.log(primeNumberNick(7));
+
+//* Nam's solution
+function primeNumberNam(max) {
+  const start = 2;
+  // creates array from 2 through to max
+  const range = Array(max - start + 1)
+    .fill()
+    .map((_, index) => start + index);
+  // removes non-prime numbers from array
+  const primes = range.filter((number) => {
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) return false;
+    }
+    return true;
+  });
+  return primes.at(-1); // returns last number of array
+}
+
+console.log(primeNumberNam(45));
+console.log(primeNumberNam(7));
