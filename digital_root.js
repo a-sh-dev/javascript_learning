@@ -21,6 +21,18 @@ console.log(digitalRoot(132189));
 console.log(digitalRoot(493193));
 // => 2
 
+// ! (CRAZY) One liner solution!
+const digitalRoot1Liner = (n) => {
+  return ((n - 1) % 9) + 1;
+};
+
+console.log("--- One Liner Solution ---");
+console.log(digitalRoot1Liner(6));
+console.log(digitalRoot1Liner(16));
+console.log(digitalRoot1Liner(942));
+console.log(digitalRoot1Liner(132189));
+console.log(digitalRoot1Liner(493193));
+
 // ! Mike's solution
 function digitalRootMike(n) {
   // split numbers into array
