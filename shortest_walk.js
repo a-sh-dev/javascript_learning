@@ -87,3 +87,28 @@ console.log(
 // should return ["WEST"]
 console.log(shortestWalkNam(["NORTH", "SOUTH", "EAST", "WEST"]));
 // should return []
+
+// ! June's Solution
+function shortestWalkJune(walk) {
+  let map = {
+    NORTH: 1,
+    SOUTH: -1,
+    WEST: -2,
+    EAST: 2
+  };
+  for (let i = 0; i < walk.length; i++) {
+    if (map[walk[i]] + map[walk[i + 1]] === 0) {
+      walk.splice(i, 2);
+      i -= 2;
+    }
+  }
+  return walk;
+}
+
+console.log("--- JUNE'S SOLUTION ---");
+console.log(
+  shortestWalkNam(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+);
+// should return ["WEST"]
+console.log(shortestWalkNam(["NORTH", "SOUTH", "EAST", "WEST"]));
+// should return []
