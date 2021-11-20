@@ -1,0 +1,98 @@
+body {
+  background-color: #010165;
+  margin: 0px;
+  font-family: "Work Sans";
+  color: #fff;
+}
+
+header {
+  background-color: #00ffff;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.title-row {
+  display: flex;
+  margin-top: 42px;
+  margin-bottom: 21px;
+  text-align: center;
+  justify-content: center;
+}
+
+.instructions-title {
+  // display: inline;
+  font-size: 1.5rem;
+  color: #00ffff;
+  font-family: "Work Sans";
+  letter-spacing: 0.15rem;
+  margin: 0.5rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.instructions-row {
+  width: 50%;
+  line-height: 1.5;
+}
+
+.instructions-row {
+  list-style: none;
+  counter-reset: chore-counter;
+}
+
+.instructions-row li {
+  margin-bottom: 1rem;
+  counter-increment: chore-counter;
+  position: relative;
+  padding-left: 0.85rem;
+}
+
+.instructions-row li::before {
+  content: counter(chore-counter);
+  color: #00ffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: absolute;
+  --size: 32px;
+  left: calc(-1 * var(--size) - 10px);
+  line-height: var(--size);
+  width: var(--size);
+  height: var(--size);
+  top: 1;
+  /* transform: rotate(-10deg); */
+  /* background: black; */
+  border: 2px solid #00ffff;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 8rem;
+  /* box-shadow: 1px 1px 0 #999; */
+}
+
+.door-row {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.door-frame {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.start-row {
+  margin-top: 1.5rem;
+  background: #eb6536;
+  color: #010165;
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+
+.start-row:hover {
+  background: salmon;
+}
