@@ -1,24 +1,35 @@
-// sort sources first - object based on the keys
-// Don't need to sort the objects first!
-const sortSource = (source) => {
-  return Object.keys(source)
-    .sort()
-    .reduce((sorted, key) => {
-      sorted[key] = source[key];
-      return sorted;
-    }, {});
-};
-
-// Oneliner sort
-// const sortSourceShort = source => Object.keys(source).sort().reduce((sorted, key) => (sorted[key] = source[key], sorted), {})
-
-// Quick way to compare equality b/w objects:
-// JSON.stringify(Object.keys(sortedRecipe)) === JSON.stringify(Object.keys(sortedStock));
-
+// Preventing NaN
 const maximumCocktails = (recipe, available) => {
   let cocktails = [];
 
-  // Make each recipe
+  // To prevent NaN, ensure all ingredients/items are inStock
+  let inStock = Object.keys(recipe).every((item) =>
+    Object.keys(available).includes(item)
+  );
+  // console.log("all inStock:", inStock);
+
+  if (inStock) {
+    let making = [];
+    // when every items inStock, make the recipe
+    Object.entries(recipe).map(([recipeItem, amount]) => {
+      return making.push(Math.floor(available[recipeItem] / amount));
+    });
+    // console.log("making: ", making);
+    // only take the minimum availability to make
+    cocktails.push(Math.min(...making));
+  } else {
+    // can't make the recipe - 0
+    cocktails.push(0);
+  }
+  // finally, show the availability to make
+  return Math.min(...cocktails);
+};
+
+// Shorter solution but resulting partial NaN
+const maximumCocktailsNan = (recipe, available) => {
+  let cocktails = [];
+
+  // Make each recipe regardless items availability
   let making = Object.entries(recipe).map(([recipeItem, amount]) => {
     return Math.floor(available[recipeItem] / amount);
   });
