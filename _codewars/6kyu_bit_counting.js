@@ -8,21 +8,21 @@
  */
 
 const countBits = (n) => {
-  return n.toString(2).split("0").join("").length;
+  return n.toString(2).split('0').join('').length;
 };
 
-countBits(1234);
+countBits(1234); // 5
 
 const countBits2 = (n) => {
   return n
     .toString(2)
-    .split("")
-    .filter((el) => el === "1").length;
+    .split('')
+    .filter((el) => el === '1').length;
 };
 
-countBits2(1234);
+countBits2(1234); // 5
 
-// without toString(2) automatic conversion
+// without toString(2) automatic binary conversion
 const countBitsMath = (n) => {
   let count1 = 0;
   while (n > 0) {
@@ -32,4 +32,4 @@ const countBitsMath = (n) => {
   return count1;
 };
 
-countBitsMath(1234);
+countBitsMath(1234); // 5
