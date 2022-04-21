@@ -1,5 +1,3 @@
-// ! Refer to .md file for instruction
-
 //* Alex's solution
 function range(start, end) {
   let arr = [];

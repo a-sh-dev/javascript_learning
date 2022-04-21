@@ -47,14 +47,14 @@ console.log(email, userDetails);
 // ! Passing object to a function
 // * Traditional way:
 function getInfo(user) {
-  console.log("Name: ${user.userName}, Email: ${user.email}");
+  console.log(`Name: ${user.userName}, Email: ${user.email}`);
 };
 
 getInfo(userInfo);
 
 // * Using Object Destructuring:
 function getInfoDesc( { name, email } ) {
-  console.log("Name: ${name}, Email: ${email}");
+  console.log(`Name: ${name}, Email: ${email}`);
 };
 
 getInfoDesc(userInfo);

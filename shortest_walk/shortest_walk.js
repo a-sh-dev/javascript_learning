@@ -1,9 +1,9 @@
 function shortestWalk(walk) {
   const opposite = {
-    NORTH: "SOUTH",
-    SOUTH: "NORTH",
-    WEST: "EAST",
-    EAST: "WEST"
+    NORTH: 'SOUTH',
+    SOUTH: 'NORTH',
+    WEST: 'EAST',
+    EAST: 'WEST',
   };
 
   walk.forEach((direction, index) => {
@@ -20,20 +20,20 @@ function shortestWalk(walk) {
 }
 
 console.log(
-  shortestWalk(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+  shortestWalk(['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST']),
 );
 // should return ["WEST"]
-console.log(shortestWalk(["NORTH", "SOUTH", "EAST", "WEST"]));
+console.log(shortestWalk(['NORTH', 'SOUTH', 'EAST', 'WEST']));
 // should return []
 
 // ! Sam's solution
 function shortestWalkSam(walk) {
   const shortestPath = [];
   let oppositeDirection = {
-    NORTH: "SOUTH",
-    WEST: "EAST",
-    SOUTH: "NORTH",
-    EAST: "WEST"
+    NORTH: 'SOUTH',
+    WEST: 'EAST',
+    SOUTH: 'NORTH',
+    EAST: 'WEST',
   };
   walk.forEach((dir) => {
     if (shortestPath.length !== 0) {
@@ -51,10 +51,10 @@ function shortestWalkSam(walk) {
 
 console.log("--- SAM'S SOLUTION ---");
 console.log(
-  shortestWalkSam(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+  shortestWalkSam(['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST']),
 );
 // should return ["WEST"]
-console.log(shortestWalkSam(["NORTH", "SOUTH", "EAST", "WEST"]));
+console.log(shortestWalkSam(['NORTH', 'SOUTH', 'EAST', 'WEST']));
 // should return []
 
 // ! Nam's Solution
@@ -67,25 +67,25 @@ function shortestWalkNam(walk) {
     (count, direction) => (
       (count[direction] = (count[direction] || 0) + 1), count
     ),
-    {}
+    {},
   );
-  const latitude = { "-1": "SOUTH", 0: null, 1: "NORTH" };
-  const longitude = { "-1": "WEST", 0: null, 1: "EAST" };
+  const latitude = { '-1': 'SOUTH', 0: null, 1: 'NORTH' };
+  const longitude = { '-1': 'WEST', 0: null, 1: 'EAST' };
   const xDirection = Math.sign(
-    (directions["EAST"] || 0) - (directions["WEST"] || 0)
+    (directions['EAST'] || 0) - (directions['WEST'] || 0),
   ); // returns -1, 0, or 1
   const yDirection = Math.sign(
-    (directions["NORTH"] || 0) - (directions["SOUTH"] || 0)
+    (directions['NORTH'] || 0) - (directions['SOUTH'] || 0),
   ); // returns -1, 0, or 1
   return [latitude[yDirection], longitude[xDirection]].filter(Boolean);
 }
 
 console.log("--- NAM'S SOLUTION ---");
 console.log(
-  shortestWalkNam(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+  shortestWalkNam(['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST']),
 );
 // should return ["WEST"]
-console.log(shortestWalkNam(["NORTH", "SOUTH", "EAST", "WEST"]));
+console.log(shortestWalkNam(['NORTH', 'SOUTH', 'EAST', 'WEST']));
 // should return []
 
 // ! June's Solution
@@ -94,7 +94,7 @@ function shortestWalkJune(walk) {
     NORTH: 1,
     SOUTH: -1,
     WEST: -2,
-    EAST: 2
+    EAST: 2,
   };
   for (let i = 0; i < walk.length; i++) {
     if (map[walk[i]] + map[walk[i + 1]] === 0) {
@@ -107,8 +107,8 @@ function shortestWalkJune(walk) {
 
 console.log("--- JUNE'S SOLUTION ---");
 console.log(
-  shortestWalkNam(["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"])
+  shortestWalkNam(['NORTH', 'SOUTH', 'SOUTH', 'EAST', 'WEST', 'NORTH', 'WEST']),
 );
 // should return ["WEST"]
-console.log(shortestWalkNam(["NORTH", "SOUTH", "EAST", "WEST"]));
+console.log(shortestWalkNam(['NORTH', 'SOUTH', 'EAST', 'WEST']));
 // should return []
