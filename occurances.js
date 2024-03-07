@@ -1,12 +1,21 @@
-let fruits = ['apple', 'apple', 'grapes', 'orange', 'orange', 'durian', 'grapes', 'apple'];
+let fruits = [
+  'apple',
+  'apple',
+  'grapes',
+  'orange',
+  'orange',
+  'durian',
+  'grapes',
+  'apple',
+];
 let basket = {};
 
 // * Traditional solution
 for (let fruit of fruits) {
-  if (basket[fruit] == null) {
-    basket[fruit] = 1 
+  if (basket[fruit] === null) {
+    basket[fruit] = 1;
   } else {
-    basket[fruit] += 1
+    basket[fruit] += 1;
   }
 }
 
@@ -24,12 +33,20 @@ for (let fruit of fruits) {
 }
 
 for (let fruit of fruits) {
-  basket[fruit] = basket[fruit] ? basket[fruit] + 1 : 1
+  basket[fruit] = basket[fruit] ? basket[fruit] + 1 : 1;
 }
 
 for (let fruit of fruits) {
   // ~ turn null to be 0 or 1 and added with math stuff with the - (this is hard to read!)
-  basket[fruit]=-~basket[fruit];
+  basket[fruit] = -~basket[fruit];
 }
 
 console.log(basket);
+
+// ! Using reduce method
+const basketWithReduce = fruits.reduce((basket, fruit) => {
+  // Check if the fruit exists in the basket
+  // if it exists, add 1, otherwise assign 0 as the value
+  basket[fruit] = (basket[fruit] || 0) + 1;
+  return basket;
+}, {});
