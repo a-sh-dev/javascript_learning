@@ -10,7 +10,7 @@ For example, the square matrix `arr` is shown below:
 9 8 9
 ```
 
-The left-to-right diagonal = `1 + 5 + 9 = 15` The right to left diagonal = `3 + 5 + 9 = 17` Their absolute difference is `15 - 17 = 2`.
+The left-to-right diagonal = $1 + 5 + 9 = 15$ The right to left diagonal = $3 + 5 + 9 = 17$ Their absolute difference is $15 - 17 = 2$.
 
 ### Function description
 
@@ -18,7 +18,7 @@ Complete the `diagonalDifference` function in the editor below.
 
 `diagonalDifference` takes the following parameter:
 
-- int arr[n][m]: an array of integers
+- int $arr[n][m]$: an array of integers
 
 ### Return
 
@@ -26,8 +26,8 @@ Complete the `diagonalDifference` function in the editor below.
 
 ### Input Format
 
-The first line contains a single integer, `n`, the number of rows and columns in the square matrix `arr`.
-Each of the next `n` lines describes a row, `arr[i]`, and consists of `n` space-separated integers `arr[i][j]`.
+The first line contains a single integer, $n$, the number of rows and columns in the square matrix $arr$.
+Each of the next $n$ lines describes a row, $arr[i]$, and consists of $n$ space-separated integers $arr[i][j]$.
 
 ### Output Format
 
@@ -58,7 +58,7 @@ The primary diagonal is:
      -12
 ```
 
-Sum across the primary diagonal: 11 + 5 - 12 = 4
+Sum across the primary diagonal: $11 + 5 - 12 = 4$
 
 The secondary diagonal is:
 
@@ -68,7 +68,7 @@ The secondary diagonal is:
 10
 ```
 
-Sum across the secondary diagonal: `4 + 5 + 10 = 19`
-Difference: `4 - 19 = 15`
+Sum across the secondary diagonal: $4 + 5 + 10 = 19$
+Difference: $4 - 19 = 15$
 
-Note: |x| is the absolute value of x
+Note: $|x|$ is the absolute value of $x$
