@@ -50,3 +50,10 @@ const basketWithReduce = fruits.reduce((basket, fruit) => {
   basket[fruit] = (basket[fruit] || 0) + 1;
   return basket;
 }, {});
+
+// ! Using Map (when order of insertion is maintained)
+// Otherwise, using plain object saves more memory
+const basketWithMap = fruits.reduce((basket, fruit) => {
+  basket.set(fruit, (basket.get(fruit) || 0) + 1);
+  return basket;
+}, new Map());
